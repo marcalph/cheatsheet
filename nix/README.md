@@ -6,7 +6,9 @@ nix-instantiate --eval <file.nix> --strict
 ```
 
 attrset
+//
 rec set
+list, ++
 let in
 attr access, with ... ; ...
 inherit ...
@@ -25,7 +27,6 @@ functions (single args, curried, attr set args, or named attr set args -> args@{
 builtins , i.e. primops
 import -> import ./file.nix {a=1; b=8;}
 pkgs.lib
-
 
 derivations
 
