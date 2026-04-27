@@ -5,14 +5,15 @@ nix-repl
 nix-instantiate --eval <file.nix> --strict
 ```
 
-attrset
+attrset, attrset ?
 //
 rec set
 list, ++
 let in
 attr access, with ... ; ...
-inherit ...
+inherit ... 
 interpolated strings , ${...}
+
 
 ''
 multi
