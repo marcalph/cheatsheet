@@ -2,6 +2,7 @@ class EOFError(Exception):
     pass
 
 class ConnectionBase:
+    """Shared socket wrapper: line-delimited send/receive used by both ends."""
     def __init__(self, connection):
         self.connection = connection
         self.file = connection.makefile('rb')
@@ -30,6 +31,7 @@ class UnknownCommandError(Exception):
     pass
 
 class Session(ConnectionBase):
+    """Server side: receives bounds, generates random guesses,"""
     def __init__(self, *args):
         super().__init__(*args)
         self._clear_state(None, None)
@@ -86,6 +88,7 @@ class Session(ConnectionBase):
 
 import contextlib
 class Client(ConnectionBase):
+    """Client side: holds the secret, requests guesses, judges them warmer/colder/correct."""
     def __init__(self, *args):
         super().__init__(*args)
         self._clear_state()
