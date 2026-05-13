@@ -73,11 +73,12 @@ import ./file.nix { a = 1; b = 8; }   # eval file, apply as function
 ```
 
 ## pkgs.lib
-
+**updating registry entries should happen with `nix registry` then `nix flake update`**
 ```nix
 let pkgs = import <nixpkgs> {};
 in pkgs.lib.strings.toUpper "abc"     # → "ABC"
 ```
+ 
 
 ## Derivations
 
