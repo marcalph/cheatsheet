@@ -92,3 +92,10 @@ pkgs.stdenv.mkDerivation {
   installPhase = "install -Dm644 hello $out/hello";
 }
 ```
+
+
+## Flake.nix
+an attrset with `inputs` and `outputs` keys, 
+`inputs` is an attrset `outputs` a function
+
+`nix-rebuild switch` uses the configuration from outputs
